@@ -27,3 +27,17 @@ This calls the perl script:
 Assign_KO.pl
 
 The hardcoded path to Kegg gene->ortholog mapping in this perl script needs to be changed.
+
+Then we collate all the *.hits files together:
+
+    ./CollateHits.pl > CollateHits.csv
+
+This will generate kegg ortholog frequencies for each cluster.
+
+##Annotate to Kegg modules
+
+Now we find which Kegg modules are present in each cluster by querying their [module reconstruct tool] (http://www.genome.jp/kegg/tool/map_module.html)
+
+    python ./KO2MODULEclusters2.py -i CollateHits.csv -o Collate_modules.csv 
+
+
