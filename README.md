@@ -7,7 +7,7 @@ This roughly summariese CQs standard approach to annotate metagenome assembled g
 
 First split the fasta file by cluster:
 
-    ./SplitClusters.pl clustering_gt1000.csv Contigs_gt1000.fasta
+    ./SplitClusters.pl Contigs_gt1000.fasta clustering_gt1000.csv 
 
 Then call genes with prodigal (maybe better to use the original contig gene callings)?:
 
