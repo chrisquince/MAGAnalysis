@@ -47,6 +47,12 @@ Somewhat unsatisfactorilly we do use the COG annotations across all contigs and 
 
     ./SplitCOGs.pl Contigs_gt1000.cogs clustering_gt1000.csv
 
+Where we have annotated cogs on the contigs using:
+
+    python ./ExtractCogsNative.py -b Contigs_gt1000.rpsout --cdd_cog_file $PATH_TO_CONCOCT/CONCOCT/scgs/cdd_to_cog.tsv > Contigs_gt1000.cogs
+
+where Contigs_gt1000.rpsout is the RPS blast output against the COG database  
+
 ##Construct a phylogenetic tree
 
 Assume we are starting from the 'Split' directory in which we have seperated out the cluster fasta files and we have done the COG assignments for each cluster: 
