@@ -55,7 +55,7 @@ where Contigs_gt1000.rpsout is the RPS blast output against the COG database
 
 ##Construct a phylogenetic tree
 
-Assume we are starting from the 'Split' directory in which we have seperated out the cluster fasta files and we have done the COG assignments for each cluster. Then the first step is to extract each of the 36 conserved core COGs individually. There is an example bash script for doing this in phyloscripts but it will need modifying:
+Assume we are starting from the 'Split' directory in which we have seperated out the cluster fasta files and we have done the COG assignments for each cluster. Then the first step is to extract each of the 36 conserved core COGs individually. There is an example bash script GetSCG.sh for doing this in phyloscripts but it will need modifying:
 
 ```
 #!/bin/bash
