@@ -57,13 +57,17 @@ where Contigs_gt1000.rpsout is the RPS blast output against the COG database
 
 Assume we are starting from the 'Split' directory in which we have seperated out the cluster fasta files and we have done the COG assignments for each cluster. Then the first step is to extract each of the 36 conserved core COGs individually. There is an example bash script for doing this in phyloscripts but it will need modifying:
 
+```
 #!/bin/bash
 while read line
 do
     cog=$line
     echo $cog
-     ./SelectCogsSCG.pl ../clustering_gt2000_scg.tsv ../../Annotate_gt2k/Contigs_gt2000_c10K.fas $cog > SCGs/$cog.ffn
-done < cogs.txt 
+     ./SelectCogsSCG.pl ../clustering_gt1000_scg.tsv ../../Annotate/Contigs_gt1000_c10K.fas $cog > SCGs/$cog.ffn
+done < cogs.txt
+``` 
+
+Run this after making a directory SCGs and it will create one file for each SCG with the corresponding nucleotide sequences from each cluster but only for this with completeness (> 0.75) hard coded in the perl script somewhere you should check that :)
 
 
 
