@@ -20,6 +20,7 @@ First align each called gene against Kegg (Asker use Diamond and new Kegg databa
     ./RapsearchB.sh
 
 Then map genes to KOs:
+    
     ./AssignKO.sh
 
 This calls the perl script:
@@ -40,4 +41,12 @@ Now we find which Kegg modules are present in each cluster by querying their [mo
 
     python ./KO2MODULEclusters2.py -i CollateHits.csv -o Collate_modules.csv 
 
+##Split Cogs
 
+Somewhat unsatisfactorilly we do use the COG annotations across all contigs and split those across clusters. It would be better to develop a coherent strategy for this:
+
+    ./SplitCOGs.pl Contigs_gt1000.cogs clustering_gt1000.csv
+
+##Construct a phylogenetic tree
+
+Assume we are starting from the 'Split' directory in which we have seperated out the cluster fasta files and we have done the COG assignments for each cluster: 
