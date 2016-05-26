@@ -95,3 +95,8 @@ do
     trimal -in $file -out ${stub}_al.gfa -gt 0.9 -cons 60
 done
 ```
+
+The next script requires the IDs of any cluster or taxa that may appear in fasta files, therefore:
+```
+cat AlignAll/*gffn | grep ">" | sed 's/_COG.*//' | sort | uniq | sed 's/>//g' > Names.txt
+```
