@@ -63,11 +63,24 @@ while read line
 do
     cog=$line
     echo $cog
-     ./SelectCogsSCG.pl ../clustering_gt1000_scg.tsv ../../Annotate/Contigs_gt1000_c10K.fas $cog > SCGs/$cog.ffn
+     ./SelectCogsSCG.pl ../clustering_gt1000_scg.tsv ../../Annotate/Contigs_gt1000_c10K.fna $cog > SCGs/$cog.ffn
 done < cogs.txt
 ``` 
 
 Run this after making a directory SCGs and it will create one file for each SCG with the corresponding nucleotide sequences from each cluster but only for this with completeness (> 0.75) hard coded in the perl script somewhere you should check that :)
 
+Then we align each of these cog files against my prepared database containing 1 genome from each bacterial genera and archael species:
+```
+#!/bin/bash
 
+mkdir AlignAll
+
+while read line
+do
+    cog=$line
+    echo $cog
+    cat /gpfs/chrisq/chris/Databases/NCBI/Combined/Cogs/All_$cog.ffn SCGs/${cog}.ffn > AlignAll/${cog}_all.ffn
+    mafft --thread 64 AlignAll/${cog}_all.ffn > AlignAll/${cog}_all.gffn
+done < cogs.txt
+```
 
