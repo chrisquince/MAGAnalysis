@@ -105,3 +105,13 @@ Which we run as follows:
 ```
 ./CombineGenes.pl Names.txt AlignAll/COG0*_al.gfa > AlignAll.gfa
 ```
+
+Then we may want to map taxaids to species names before building tree:
+```
+./MapTI.pl TaxaSpeciesR.txt < AlignAll.gfa > AlignAllR.gfa
+```
+
+Finally we get to build our tree:
+```
+FastTreeMP -nt -gtr < AlignAllR.gfa 2> SelectR.out > AlignAllR.tree
+```
