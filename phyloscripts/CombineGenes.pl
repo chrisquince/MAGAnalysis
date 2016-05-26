@@ -65,7 +65,7 @@ foreach my $file(@ARGV){
     my $total = $count;
 
     my $cog = "";
-   if($file =~/.*\/(COG\d+)_all_root.gffn/){
+   if($file =~/.*\/(COG\d+)_all_al.gfa/){
         $cog = $1;
         push(@cogs,$cog);
         

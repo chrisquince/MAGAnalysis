@@ -100,3 +100,8 @@ The next script requires the IDs of any cluster or taxa that may appear in fasta
 ```
 cat AlignAll/*gffn | grep ">" | sed 's/_COG.*//' | sort | uniq | sed 's/>//g' > Names.txt
 ```
+
+Which we run as follows:
+```
+./CombineGenes.pl Names.txt AlignAll/COG0*_al.gfa > AlignAll.gfa
+```
