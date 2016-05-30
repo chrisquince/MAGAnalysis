@@ -131,4 +131,4 @@ Having set up the conda environment simply run:
 python ./AssignTree.py AlignAllR.tree data/TaxaSpeciesR.txt data/all_taxa_lineage.tsv > AlignAllR_assign.tsv
 ```
 
-
+You will need to gunzip data/all_taxa_lineage.tsv.gz first...
