@@ -115,3 +115,20 @@ Finally we get to build our tree:
 ```
 FastTreeMP -nt -gtr < AlignAllR.gfa 2> SelectR.out > AlignAllR.tree
 ```
+
+##Assigning taxonomy to bins from tree
+
+The script for doing this requires the [ETE3 python package](http://etetoolkit.org/download/). 
+This is generally run through anaconda as follows:
+
+```
+# Activate the environment 
+export PATH=~/anaconda_ete/bin:$PATH
+```
+
+Having set up the conda environment simply run:
+```
+python ./AssignTree.py AlignAllR.tree data/TaxaSpeciesR.txt data/all_taxa_lineage.tsv > AlignAllR_assign.tsv
+```
+
+
