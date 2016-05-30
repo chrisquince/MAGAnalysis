@@ -76,8 +76,8 @@ def main(argv):
     
     for cluster in clusters:
         closest, closest_dist = cluster.get_farthest_node()
-        print cluster.name
-        sys.stdout.flush()
+    #    print cluster.name
+     #   sys.stdout.flush()
         for reference in references:
             dist = t.get_distance(cluster,reference, topology_only=False)
             #print dist
