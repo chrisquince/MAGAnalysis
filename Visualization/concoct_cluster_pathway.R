@@ -13,7 +13,6 @@ plot_cluster_pathways <- function(clusters, pathway, cluster_ko_table, suffix = 
   names(relevant_kos) <- sub("ko.", "", names(relevant_kos))
   relevant_kos <- relevant_kos[, which(names(relevant_kos) %in% ko_elements)]
   relevant_kos <- relevant_kos[,colSums(relevant_kos) > 0  ]
-  relevant_kos[row.names(relevant_kos) %in% c("C326", "C318", "C47") & relevant_kos > 0] <- -1
   pv.out <- pathview(gene.data = t(relevant_kos), cpd.data = NULL, pathway.id = pathway,species="ko", out.suffix = suffix)
   
 }
