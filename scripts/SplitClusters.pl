@@ -15,7 +15,7 @@ my $seq = "";
 while($line = <FILE>){ 
     chomp($line);
     
-    if($line =~ />(.*?)\s.*/){
+    if($line =~ />(.*)/){
 	#print "$1\n";	
 	$id[$count] = $1;
 	$hashID{$1} = $count;
